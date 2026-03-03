@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Rafael Portfolio</title>
+</head>
+
+<body>
+
+    <div class="particulas"></div>
+
+
+    <nav class="navegacao">
+        <ul class="menu">
+            <li>
+                <a href="index.html" class="menu-link">Início</a>
+            </li>
+            <li>
+                <a href="#sobre" class="menu-link">Sobre</a>
+            </li>
+            <li>
+                <a href="#projetos" class="menu-link">Projetos</a>
+            </li>
+            <li>
+                <a href="#contatos" class="menu-link">Contato</a>
+            </li>
+            <li class="dropdown">
+                <a href="#" class="menu-link">Mais habilidades ▼</a>
+                <ul class="dropdown-menu">
+                    <li><a href="audiovisual.html">Audiovisual</a></li>
+                    <li><a href="#">Fotografia</a></li>
+                    <li><a href="#">Desenhos</a></li>
+                    <li><a href="#">Trabalhos acadêmicos</a></li>
+                    <li><a href="#">Outros projetos</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+    <main id="inicio" class="cabecalho">
+        <img src="img/perfil.jpeg" alt="Foto de perfil" class="foto-perfil">
+        <h1>Rafael Feitosa</h1>
+        <p class="cabecalho-sub-titulo">Desenvolvedor Front e Audiovisual</p>
+    </main>
+    <section id="sobre" class="sobre">
+        <h2 class="sobre-titulo">Sobre mim</h2>
+        <div class="sobre-caixa">
+            <p class="sobre-paragrafo">
+                Seja bem-vindo ao meu portfólio!
+                Aqui você vai encontrar projetos que refletem minha paixão por tecnologia,
+                design, comunicação e experiências bem pensadas. Gosto de unir usabilidade, criatividade e propósito em
+                tudo o que construo. sempre buscando soluções que sejam funcionais e ao mesmo tempo visualmente
+                atraentes. Fique à vontade para explorar,
+            </p>
+        </div>
+    </section>
+    <section id="projetos" class="projetos">
+        <h2 class="projetos-titulo">Meus Projetos</h2>
+        <div class="projetos-caixa">
+
+            <div class="projetos-card">
+                <a href="projeto-streaming.html">
+
+                    <img src="img/1.png" alt="Projeto 1" class="projetos-imagem"></a>
+                <div class="caixa-textos-projeto">
+                    <h3 class="info-projetos">Streaming de Vídeo</h3>
+                    <p class="paragrafo-projetos">Uma plataforma de vídeos para hospedar mídias e as pessoas poderem
+                        eleger a melhor
+                        foi feita na cadeira de projeto com uma equipe
+                    </p>
+                </div>
+            </div>
+
+            <div class="projetos-card">
+                <img src="img/2.png" alt="Projeto 1" class="projetos-imagem">
+                <div class="caixa-textos-projeto">
+                    <h3 class="info-projetos">Conheça meu GitHub</h3>
+                    <p class="paragrafo-projetos">Quero te convidar para conhecer meu GitHub.
+                        É lá onde eu organizo e guardo meus repositórios de código, com os projetos
+                        que venho desenvolvendo. Dá uma olhada quando puder!</p>
+                </div>
+            </div>
+
+            <div class="projetos-card">
+                <a href="https://rafaelfeitosax.github.io/dragonplay">
+                <img src="img/3.gif" alt="Projeto 1" class="projetos-imagem">
+                <div class="caixa-textos-projeto">
+                    <h3 class="info-projetos">Player Music</h3>
+                    <p class="paragrafo-projetos">Aqui eu estava aprendendo a fazer
+                        uma espécie de spotify com musicas de Dragon Ball
+                    </p></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contatos" class="contatos">
+        <h2 class="contatos-titulo">Entre em Contato</h2>
+
+
+        <form class="formulario-contato" id="formulario" onsubmit="enviarWhats(event)">
+            <div class="grupo-form">
+                <input placeholder="Nome" class="campo-form" id="nome">
+            </div>
+
+
+            <div>
+                <div class="grupo-form">
+                    <textarea class="campo-form" placeholder="Digite sua Mensagem" rows="6" id="mensagem"></textarea>
+                </div>
+            </div>
+            <button type="submit" class="botao-form">Enviar Whatsapp</button>
+        </form>
+    </section>
+
+    <script>
+
+        function enviarWhats(event) {
+
+            event.preventDefault()
+
+
+            const nome = document.getElementById('nome').value;
+            const mensagem = document.getElementById('mensagem').value;
+            const telefone = '5585997133797'
+
+            const texto = `Olá! Me chamo ${nome}, ${mensagem}`
+            const msgFormatada = encodeURIComponent(texto)
+
+            const url = `https://wa.me/${telefone}/?text=${msgFormatada}`
+
+            window.open(url, '_blank')
+        }
+
+    </script>
+
+</body>
+
+</html>
